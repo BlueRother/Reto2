@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="/css/main.css" >
+	</head>
+	<body>
+
+		<nav class="navbar navbar-toggleable-md  navbar-inverse bg-inverse">
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand" href="#">Reto 02</a>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item ">
+						<a class="nav-link" href="/">Personas</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="/formulario/">Formulario</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container pt-5">
+			<form method="post">
+		  		<div class="form-group row">
+		  			<label for="nombres-text" class="col-2 col-form-label">Nombres:</label>
+			  		<div class="col-9">
+			    		<input class="form-control" id="nombres" name ="nombres" type="text" placeholder="Nombres" id="example-text-input">
+			  		</div>
+				</div>
+				<div class="form-group row">
+					<label for="apellidos-text" class="col-2 col-form-label">Apellidos:</label>
+					<div class="col-9">
+						<input class="form-control" id="apellidos" name ="apellidos" type="text" placeholder="Apellidos" id="example-text-input">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="example-select-input" class="col-2 col-form-label">Persona:</label>
+					<div class="col-9">
+						<select id="persona" name ="persona" class="form-control" id="example-select-input">
+							{% for persona in personas %}
+											<option value={{persona.nombres}}>{{persona.nombres}}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+		 		<button type="submit" class="btn btn-primary">Enviar</button>
+			</form>
+		</div>
+
+		<!-- jQuery first, then Tether, then Bootstrap JS. -->
+		<script src="/js/jquery-3.1.1.slim.min.js" ></script>
+		<script src="/js/tether.min.js" ></script>
+		<script src="/js/bootstrap.min.js"></script>
+	</body>
+</html>

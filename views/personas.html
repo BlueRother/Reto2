@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>	Victor y sus amigos </title>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="../css/bootstrap.min.css" >
+		<link rel="stylesheet" href="../css/main.css" >
+	</head>
+	<body>
+
+		<nav class="navbar navbar-toggleable-md  navbar-inverse bg-inverse">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="#">Reto 02</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/">Personas</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/formulario/">Formulario</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+<h1>Victor y sus Amigos</h1>
+	<div class="container py-5 d-flex align-items-start flex-wrap justify-content-center">
+		<div class="container py-5 d-flex align-items-start flex-wrap justify-content-center">
+		<h2>PERSONA</h2>
+	</div>
+		{% for persona in personas %}
+		<div>
+			<p><b>Nombres: </b> {{ persona.nombres }}</p>
+			<p><b>Apellidos: </b>{{ persona.apellidos }}</p>
+		</div>
+		<div class="container py-5 d-flex align-items-start flex-wrap justify-content-center">
+			<h2>AMIGOS</h2>
+		</div>
+		<div class="container py-5 d-flex align-items-start flex-wrap justify-content-center">
+			{% for amigo in persona.friends %}
+				<article>
+					<p><b>Nombres: </b> {{ amigo.nombres }}</p>
+					<p><b>Apellidos: </b>{{ amigo.apellidos }}</p>
+				</article>
+			{% endfor %}
+		</div>
+			{% endfor %}
+	</div>
+
+
+		<!-- jQuery first, then Tether, then Bootstrap JS. -->
+		<script src="../js/jquery-3.1.1.slim.min.js" ></script>
+		<script src="../js/tether.min.js" ></script>
+		<script src="../js/bootstrap.min.js"></script>
+	</body>
+</html>
